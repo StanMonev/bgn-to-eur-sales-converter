@@ -460,6 +460,67 @@ button:active {
   filter: saturate(0.9) brightness(0.95);
 }
 
+/* ===== Support button ===== */
+.supportBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  height: 44px;
+  padding: 0 12px;
+
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--surface2), var(--surface));
+  box-shadow: var(--shadow);
+
+  color: var(--text);
+  text-decoration: none;
+
+  backdrop-filter: blur(10px);
+  transition: transform 120ms ease, background 120ms ease, opacity 120ms ease;
+}
+
+.supportBtn:hover {
+  transform: translateY(-1px);
+}
+
+.supportBtn__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: var(--btn);
+}
+
+.supportBtn__text {
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* ===== Mobile behavior ===== */
+@media (max-width: 700px) {
+  .supportBtn {
+    position: fixed;
+    right: 14px;
+    bottom: 45px;
+    z-index: 60;
+    height: 42px;
+    padding: 0 5px;
+  }
+
+  .supportBtn__text {
+    display: none;
+  }
+
+  .supportBtn:hover .supportBtn__text,
+  .supportBtn:focus-visible .supportBtn__text {
+    display: inline;
+  }
+}
 
 /* ===== Responsive header behavior ===== */
 @media (max-width: 700px) {

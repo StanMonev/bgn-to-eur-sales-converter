@@ -12,6 +12,8 @@ import { SummaryCard } from "./components/SummaryCard";
 import bgnToEuroIcon from "./assets/bgn_to_euro.png";
 import { CreditsModal } from "./components/CreditsModal";
 import { useLocalStorageState } from "./hooks/useLocalStorageState";
+import { SupportButton } from "./components/SupportButton";
+
 
 
 
@@ -78,7 +80,6 @@ export default function App() {
               onToggle={() => setLang((p) => (p === "bg" ? "en" : "bg"))}
             />
 
-
             <button
               type="button"
               className="iconBtn"
@@ -88,6 +89,11 @@ export default function App() {
             >
               {theme === "dark" ? "☀️" : "🌙"}
             </button>
+
+            <SupportButton
+              href="https://buymeacoffee.com/stanimir.monev"
+              label={lang === "bg" ? "Почерпи ме с кафе" : "Buy me a coffee"}
+            />
           </div>
         </div>
       </header>
@@ -210,10 +216,13 @@ export default function App() {
             by: translation.creditsIconEnFlagBy,
             link: "https://www.flaticon.com/free-icons/english",
           },
+          {
+            label: translation.creditsIconSiteFavicon,
+            by: translation.creditsIconSiteFaviconBy,
+            link: "https://www.flaticon.com/free-icons/currency",
+          },
         ]}
       />
-
-
     </div>
   );
 
